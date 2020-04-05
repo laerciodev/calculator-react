@@ -22,12 +22,12 @@ export default function CalculatorService() {
                 result = num1 / num2;
                 break;
             default:
-                result = 0;
+                return 0;
         }
 
         return result;
     }
-
+    
     function concatNumbers(currentNumber, numConcat) {
         // case 0 or null, reset the value
         if (currentNumber === '0' || currentNumber === null) {
