@@ -1,3 +1,5 @@
+# Didatic project to learn react hooks and tests using Jest library.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
