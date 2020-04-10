@@ -1,9 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import CalculatorService from './calculator.service';
 
 describe('Teste do Calculadora Service', () => {
-    const [calculate, concatNumbers, SUM, SUBS, MULT, DIV] = CalculatorService();
+    const [calculate, SUM, SUBS, MULT, DIV] = CalculatorService();
 
     it('deve garantir que 1 + 4 = 5', () => {
         let sum = calculate(1, 4, SUM);

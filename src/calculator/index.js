@@ -4,7 +4,7 @@ import CalculatorService from './calculator.service';
 
 const Calculator = () => {
 
-    const [ calculate, concatNumbers, SUM, SUBS, MULT, DIV] = CalculatorService();
+    const [ calculate, SUM, SUBS, MULT, DIV, concatNumbers ] = CalculatorService();
 
     const [ numberInput, setNumberInput ] = useState('');
     const [ number1, setNumber1 ] = useState(null);
@@ -52,8 +52,8 @@ const Calculator = () => {
     }
 
     function clear() {
-        setNumberInput('0');
-        setNumber1('0');
+        setNumberInput('');
+        setNumber1(null);
         setNumber2(null);
         setOperation(null);
     }
@@ -61,24 +61,24 @@ const Calculator = () => {
     return (
         <div className="calculator">
         <p id="tagline">eletronic calculator</p>
-        <input id="answer" className="panel" type="text" value={numberInput} disabled="disabled" />  
+        <input id="answer" data-testid="answer" size="8" className="panel" type="text" value={numberInput} disabled="disabled" />  
         <div className="row">
             <button className="button ctrl" onClick={ clear }>AC</button>
             <button className="button ctrl">CE</button>
             <button className="button" onClick={() => defineOperation('%')}>&#37;</button>
-            <button className="button" onClick={() => defineOperation('/')}>&#247;</button>  
+            <button className="button" onClick={() => defineOperation(DIV)}>&#247;</button>  
         </div>
         <div className="row">
             <button className="button" onClick={() => addNumber(7)}>7</button>
             <button className="button" onClick={() => addNumber(8)}>8</button>
             <button className="button" onClick={() => addNumber(9)}>9</button>
-            <button className="button" onClick={() => defineOperation('x')}>x</button>
+            <button className="button" onClick={() => defineOperation(MULT)}>x</button>
         </div>
         <div className="row">
             <button className="button" onClick={() => addNumber(4)}>4</button>
             <button className="button" onClick={() => addNumber(5)}>5</button>
             <button className="button" onClick={() => addNumber(6)}>6</button>
-            <button className="button" onClick={() => defineOperation('-')}>-</button>
+            <button className="button" onClick={() => defineOperation(SUBS)}>-</button>
         </div>
         <div className="last-rows">
             <div className="rows">
@@ -93,7 +93,7 @@ const Calculator = () => {
                     <button className="button" onClick={ actionCalculate }>&#61;</button>
                 </div>
             </div>
-            <button className="button sum" onClick={() => defineOperation('+')}>+</button> 
+            <button className="button sum" onClick={() => defineOperation(SUM)}>+</button> 
         </div> 
     </div>
     )

@@ -47,5 +47,5 @@ export default function CalculatorService() {
         return currentNumber + numConcat;
     }
 
-    return [ calculate, concatNumbers, SUM, SUBS, MULT, DIV ];
+    return [ calculate, SUM, SUBS, MULT, DIV, concatNumbers ];
 }
